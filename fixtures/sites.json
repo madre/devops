@@ -1,0 +1,18 @@
+[
+    {
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:8000",
+            "name": "dianjoy.com [localhost]"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "sites.site",
+        "fields": {
+            "domain": "dianjoy.com",
+            "name": "dianjoy"
+        }
+    }
+]

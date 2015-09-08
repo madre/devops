@@ -1,0 +1,16 @@
+{% extends "task_base.html" %}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block body_class %}{% endblock %}
+
+{% block head_title %}{% trans "Account" %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="alert text-center" role="alert">
+            <p>返回列表，<a href="{% url "crontab_list" %}">查看状态更新</a></p>
+        </div>
+    </div>
+{% endblock %}

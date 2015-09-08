@@ -1,0 +1,5 @@
+0 * * * * /bin/ls
+0 * * * * /bin/ls
+f1 f2 f3 f4 f5 command
+f1 f2 f3 f4 f5 command
+f1 f2 f3 f4 f5 command

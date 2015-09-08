@@ -1,0 +1,12 @@
+{% extends "task_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Not Found" %}{% endblock %}
+
+{% block body %}
+    <header class="jumbotron subhead" id="overview">
+        <h1>{% trans "权限不足" %}</h1>
+        <p class="lead">{% trans "您的权限不足，如果需要相关操作，请联系管理员！" %}</p>
+    </header>
+{% endblock %}

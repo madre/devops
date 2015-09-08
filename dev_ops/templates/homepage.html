@@ -1,0 +1,39 @@
+{#{% extends "site_base.html" %}#}
+{% extends "task_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}pinax-project-account{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body %}
+
+    <section class="jumbotron">
+        <div class="container">
+            {% include "_messages.html" %}
+            <h1>{% blocktrans %}<small>欢迎进入</small>devops系统{% endblocktrans %}</h1>
+            <p>
+                {% blocktrans %}
+                <p>系统开发中，将集成项目部署、定时任务、脚本运行、数据库表管理等功能；</p>
+                <p>普通用户看到自己创建的数据 和 自己所管理项目的数据，管理员可以看到所有内容；</p>
+                <p>陆续更新，如果有好的建议，请邮件至 deling.ma@dianjoy.com。</p>
+                {% endblocktrans %}
+            </p>
+            {% if not user.is_authenticated %}
+            {% url "account_login" as login_url %}
+            {% url "account_signup" as signup_url %}
+            <p>{% blocktrans %}你可以直接 <a href="{{ login_url }}" class="btn btn-default">登录</a> 或 <a href="{{ signup_url }}" class="btn btn-primary">注册</a> 使用系统。{% endblocktrans %}</p>
+            {% endif %}
+        </div>
+    </section>
+    <section>
+        <div class="">
+            <p class="lead text-center">
+                {% blocktrans %}
+                数据管理、人员管理、操作记录查看等，请进入<a href="/backend/">管理后台</a>
+                {% endblocktrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}

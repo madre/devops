@@ -1,0 +1,40 @@
+{# Includes django-pagination template #}
+{# If you want to use django builtin pagination override this template #}
+{# and include ``pagination/django_pagination_pagination.html`` instead. #}
+{#{% include "pagination/django_pagination_pagination.html" %}#}
+
+
+{# Pagination for django-pagination #}
+{% load i18n %}
+
+{% if is_paginated %}
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a>共{{ paginator.count }}条数据</a></li>
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+          {% if paginator.num_page < 10 %}
+            {% for num in paginator.page_range %}
+            <li {% if "page" not in request.GET and num == 1 or num|stringformat:"s" == request.GET.page %}class="active"{% endif %}>
+                <a href="#">{{ num }}</a>
+            </li>
+            {% endfor %}
+        {% else  %}
+            {% for num in paginator.page_range %}
+            <li {% if "page" not in request.GET or num|stringformat:"s" == request.GET.page %}class="active"{% endif %}>
+                <a href="#">{{ num }}</a>
+            </li>
+            {% endfor %}
+        {% endif %}
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+{% endif %}
+

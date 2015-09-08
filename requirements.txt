@@ -1,0 +1,10 @@
+Django==1.8.4
+
+pinax-eventlog==1.0.0
+django-jsonfield==0.9.15
+
+django-reversion
+django-crispy-forms
+
+# pinax-theme-bootstrap==7.0.0
+# django-user-accounts==1.2
